@@ -2,7 +2,7 @@
 #include "sort.h"
 #include "utils.h"
 
-int main() { // [TODO] Fill in the parameters
+int main(int argc, char *argv[]) { // [TODO] Fill in the parameters
     FILE *input, *output;
     char *filename;
 
