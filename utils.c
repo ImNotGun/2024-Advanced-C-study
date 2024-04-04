@@ -28,3 +28,8 @@ int countLines(FILE *input) {
 /* [TODO]
    Implement function swap
 */
+
+void swap(Student *student, Student *Student)
+{
+    if()
+}

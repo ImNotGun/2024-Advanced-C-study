@@ -8,11 +8,11 @@ int main(int argc, char *argv[]) { // [TODO] Fill in the parameters
 
     if () { // [TODO] Fill in the condition
         fprintf(stderr, "Command should be format like below\n");
-        fprintf(stderr, "%s try/*_sort.in\n", ); // [TODO] Fill in the arguments
+        fprintf(stderr, "%s try/*_sort.in\n", "make all"); // [TODO] Fill in the arguments
         exit(EXIT_FAILURE);
     }
 
-    filename = strdup(); // [TODO] Fill in the arguments
+    filename = strdup("id_sort.in"); // [TODO] Fill in the arguments
     input = fopen(filename, "r");
     if (input == NULL) {
         fprintf(stderr, "Input file error\n");
@@ -26,29 +26,29 @@ int main(int argc, char *argv[]) { // [TODO] Fill in the parameters
         exit(EXIT_FAILURE);
     }
 
-    char line[MAX_BUFFER_SIZE];
+    char line[MAX_BUFFER_SIZE]; // createdStudents 함수를 통해 학생들의 신상을 담아두고
     int length = countLines(input);
     int index = 0;
-    Student *students = createStudents(); // [TODO] Fill in the arguments
+    Student *students = createStudents(length); // [TODO] Fill in the arguments
 
     while (fgets(line, MAX_BUFFER_SIZE, input) != NULL) {
-        char name[MAX_BUFFER_SIZE];
-        int id;
+        char name[MAX_BUFFER_SIZE]; 
+        int id; // line에서 신상을 털어올 것.
 
-        sscanf(); // [TODO] Fill in the arguments
-        appendStudent(); // [TODO] Fill in the arguments
+        sscanf(line,"name: %s major: %*s id: %d", name, &id); // [TODO] Fill in the arguments
+        appendStudent(students, index, student); // [TODO] Fill in the arguments
     }
 
-    SortBy sortBy = setSortBy(); // [TODO] Fill in the arguments
+    SortBy sortBy = setSortBy(filename); // [TODO] Fill in the arguments
     switch (sortBy) {
     case NAME:
         quickSort(); // [TODO] Fill in the arguments
-        printStudents(); // [TODO] Fill in the arguments
+        printStudents(output, students, length); // [TODO] Fill in the arguments
         break;
     
     case ID:
         quickSort(); // [TODO] Fill in the arguments
-        printStudents(); // [TODO] Fill in the arguments
+        printStudents(output, students, length); // [TODO] Fill in the arguments
         break;
 
     default:
